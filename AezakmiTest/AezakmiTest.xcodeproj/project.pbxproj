@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A2D9FC12C57E4CD004A9053 /* AezakmiTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D9FC02C57E4CD004A9053 /* AezakmiTestApp.swift */; };
-		2A2D9FC32C57E4CD004A9053 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D9FC22C57E4CD004A9053 /* ContentView.swift */; };
+		2A2D9FC32C57E4CD004A9053 /* LoginMethodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D9FC22C57E4CD004A9053 /* LoginMethodsView.swift */; };
 		2A2D9FC52C57E4D0004A9053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A2D9FC42C57E4D0004A9053 /* Assets.xcassets */; };
 		2A2D9FC82C57E4D0004A9053 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A2D9FC72C57E4D0004A9053 /* Preview Assets.xcassets */; };
 		2A2D9FD22C57F842004A9053 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2A2D9FD12C57F842004A9053 /* FirebaseAuth */; };
@@ -16,17 +16,27 @@
 		2A2D9FD72C57FA41004A9053 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A2D9FD62C57FA41004A9053 /* GoogleSignInSwift */; };
 		2A2D9FD92C57FBE4004A9053 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A2D9FD82C57FBE4004A9053 /* GoogleService-Info.plist */; };
 		2A2D9FDC2C57FCC3004A9053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D9FDB2C57FCC3004A9053 /* AppDelegate.swift */; };
+		2A804E9F2C584D2400040DE4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804E9E2C584D2400040DE4 /* ViewModel.swift */; };
+		2A804EA12C584D8800040DE4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EA02C584D8800040DE4 /* SignInView.swift */; };
+		2A804EA32C584F2800040DE4 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EA22C584F2800040DE4 /* SignUpView.swift */; };
+		2A804EA52C58DA3F00040DE4 /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EA42C58DA3F00040DE4 /* EmailVerificationView.swift */; };
+		2A804EA72C58DEC200040DE4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EA62C58DEC200040DE4 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A2D9FBD2C57E4CD004A9053 /* AezakmiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AezakmiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2D9FC02C57E4CD004A9053 /* AezakmiTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AezakmiTestApp.swift; sourceTree = "<group>"; };
-		2A2D9FC22C57E4CD004A9053 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2A2D9FC22C57E4CD004A9053 /* LoginMethodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodsView.swift; sourceTree = "<group>"; };
 		2A2D9FC42C57E4D0004A9053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A2D9FC72C57E4D0004A9053 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A2D9FD82C57FBE4004A9053 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2A2D9FDA2C57FC5A004A9053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2A2D9FDB2C57FCC3004A9053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2A804E9E2C584D2400040DE4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2A804EA02C584D8800040DE4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		2A804EA22C584F2800040DE4 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		2A804EA42C58DA3F00040DE4 /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
+		2A804EA62C58DEC200040DE4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +72,15 @@
 		2A2D9FBF2C57E4CD004A9053 /* AezakmiTest */ = {
 			isa = PBXGroup;
 			children = (
+				2A804EA82C5903B000040DE4 /* Modules */,
 				2A2D9FDA2C57FC5A004A9053 /* Info.plist */,
 				2A2D9FD82C57FBE4004A9053 /* GoogleService-Info.plist */,
 				2A2D9FC02C57E4CD004A9053 /* AezakmiTestApp.swift */,
-				2A2D9FC22C57E4CD004A9053 /* ContentView.swift */,
 				2A2D9FC42C57E4D0004A9053 /* Assets.xcassets */,
 				2A2D9FC62C57E4D0004A9053 /* Preview Content */,
 				2A2D9FDB2C57FCC3004A9053 /* AppDelegate.swift */,
+				2A804EA42C58DA3F00040DE4 /* EmailVerificationView.swift */,
+				2A804EA62C58DEC200040DE4 /* TestView.swift */,
 			);
 			path = AezakmiTest;
 			sourceTree = "<group>";
@@ -79,6 +91,41 @@
 				2A2D9FC72C57E4D0004A9053 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2A804EA82C5903B000040DE4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2A804EA92C5903BE00040DE4 /* LoginMethods */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2A804EA92C5903BE00040DE4 /* LoginMethods */ = {
+			isa = PBXGroup;
+			children = (
+				2A804EAB2C5903FF00040DE4 /* ViewModels */,
+				2A804EAA2C5903F900040DE4 /* Views */,
+			);
+			path = LoginMethods;
+			sourceTree = "<group>";
+		};
+		2A804EAA2C5903F900040DE4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A804EA22C584F2800040DE4 /* SignUpView.swift */,
+				2A804EA02C584D8800040DE4 /* SignInView.swift */,
+				2A2D9FC22C57E4CD004A9053 /* LoginMethodsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A804EAB2C5903FF00040DE4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A804E9E2C584D2400040DE4 /* ViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,8 +209,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A2D9FDC2C57FCC3004A9053 /* AppDelegate.swift in Sources */,
-				2A2D9FC32C57E4CD004A9053 /* ContentView.swift in Sources */,
+				2A2D9FC32C57E4CD004A9053 /* LoginMethodsView.swift in Sources */,
+				2A804E9F2C584D2400040DE4 /* ViewModel.swift in Sources */,
 				2A2D9FC12C57E4CD004A9053 /* AezakmiTestApp.swift in Sources */,
+				2A804EA72C58DEC200040DE4 /* TestView.swift in Sources */,
+				2A804EA32C584F2800040DE4 /* SignUpView.swift in Sources */,
+				2A804EA52C58DA3F00040DE4 /* EmailVerificationView.swift in Sources */,
+				2A804EA12C584D8800040DE4 /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
