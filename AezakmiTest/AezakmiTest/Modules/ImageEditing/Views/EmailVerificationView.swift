@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-// TODO: чекнуть
+
 struct EmailVerificationView: View {
 
     @EnvironmentObject var viewModel: AuthorizationViewModel

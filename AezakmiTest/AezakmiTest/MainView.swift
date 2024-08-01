@@ -62,7 +62,7 @@ struct MainView: View {
         .sheet(isPresented: $isCameraSheetPresented, onDismiss: loadImage) {
             ImagePickerView(isShown: $isCameraSheetPresented, sourceType: .camera, selectedImage: $image)
         }
-        .sheet(isPresented: $isEmailVerificationPresented, onDismiss: loadImage) { // проверка верификации
+        .sheet(isPresented: $isEmailVerificationPresented, onDismiss: loadImage) {
            EmailVerificationView()
                 .environmentObject(viewModel)
         }

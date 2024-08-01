@@ -1,5 +1,5 @@
 //
-//  TextBoxView.swift
+//  TextBoxComponent.swift
 //  AezakmiTest
 //
 //  Created by Давид Васильев on 31.07.2024.

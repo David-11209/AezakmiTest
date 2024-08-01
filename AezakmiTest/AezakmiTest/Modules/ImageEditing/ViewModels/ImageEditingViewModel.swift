@@ -20,6 +20,7 @@ final class ImageEditingViewModel: ObservableObject {
     @Published var rect: CGRect = .zero
     @Published var showAlert: Bool = false
     @Published var message: String = ""
+    
     func cancelImageEditing() {
         canvasView = PKCanvasView()
         toolPicker.setVisible(false, forFirstResponder: canvasView)

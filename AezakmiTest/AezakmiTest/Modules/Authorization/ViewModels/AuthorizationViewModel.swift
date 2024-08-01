@@ -11,7 +11,6 @@ import GoogleSignIn
 
 final class AuthorizationViewModel: NSObject, ObservableObject {
 
-//    private var currentUser: GIDGoogleUser?
     func signInWithGoogle() async -> Bool {
         guard let clientId = FirebaseApp.app()?.options.clientID else {
             return false
@@ -37,7 +36,6 @@ final class AuthorizationViewModel: NSObject, ObservableObject {
             let accessToken = user.accessToken
             let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
             let result = try await Auth.auth().signIn(with: credential)
-            let firebaseUser = result.user
             return true
         }
         catch {
@@ -61,16 +59,14 @@ final class AuthorizationViewModel: NSObject, ObservableObject {
         Auth.auth().fetchSignInMethods(forEmail: email) { (methods, error) in
             if let error = error {
                 print("Ошибка при проверке email: \(error.localizedDescription)")
-                completion(false) // В случае ошибки считаем email не уникальным
+                completion(false)
                 return
             }
 
-            // Если methods пуст, то email уникален
             completion(methods?.isEmpty ?? true)
         }
     }
 
-    // Функция для регистрации пользователя
     func signUpWithEmail(email: String, password: String, completion: @escaping (Bool, String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (res, error) in
             if let error = error {
@@ -79,9 +75,6 @@ final class AuthorizationViewModel: NSObject, ObservableObject {
                 return
             }
             completion(true, email)
-
-            // Регистрация успешна
-
         }
     }
 
@@ -100,7 +93,6 @@ final class AuthorizationViewModel: NSObject, ObservableObject {
         }
     }
 
-    // TODO: Это должно быть приватным. Используется только внутри. При проверке пользуйся 4 вкладкой (Поиск по проекту)
     func sendEmailVerification(completion: @escaping (Bool, String) -> Void) {
         guard let user = Auth.auth().currentUser else {
             completion(false, "Пользователь не найден.")
@@ -113,12 +105,11 @@ final class AuthorizationViewModel: NSObject, ObservableObject {
                 completion(false, error.localizedDescription)
                 return
             }
-            // Письмо отправлено успешно
+
             completion(true, "Письмо с подтверждением отправлено на \(user.email ?? ""). Проверьте свой почтовый ящик.")
         }
     }
 
-    // Функция для проверки подтверждения email
     func checkEmailVerification(completion: @escaping (Bool) -> Void) {
         guard let user = Auth.auth().currentUser else {
             completion(false)
@@ -134,13 +125,3 @@ final class AuthorizationViewModel: NSObject, ObservableObject {
         }
     }
 }
-//
-//self.checkEmailVerification { res in
-//    if res {
-//        completion(true, email)
-//    } else {
-//        guard let user = Auth.auth().currentUser else { return }
-//        user.delete()
-//        completion(false, "")
-//    }
-//}

@@ -18,10 +18,6 @@ struct PhotoDrawingView: View {
         VStack {
             DrawingView(image: image)
                 .environmentObject(viewModel)
-
-            NavigationLink(destination: ImageFilterView(image: image), isActive: $isFilterPresented) {
-                EmptyView()
-            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .alert(isPresented:  $viewModel.showAlert) {
@@ -30,6 +26,8 @@ struct PhotoDrawingView: View {
     }
 }
 
+//
 //#Preview {
 //    PhotoDrawingView(image: .add)
+//        .environmentObject(ImageFilterViewModel())
 //}

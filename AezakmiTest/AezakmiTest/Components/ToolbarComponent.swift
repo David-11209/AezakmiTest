@@ -12,7 +12,6 @@ struct ToolbarComponent: View {
     @Binding var isShareTapped: Bool
     var isTextEditorPresented: Bool = false
 
-    // TODO: ViewModifiers(но не факт вообще)
     var body: some View {
         if isTextEditorPresented {
             Button(action: {
