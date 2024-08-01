@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A2D9FC12C57E4CD004A9053 /* AezakmiTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D9FC02C57E4CD004A9053 /* AezakmiTestApp.swift */; };
-		2A2D9FC32C57E4CD004A9053 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D9FC22C57E4CD004A9053 /* ContentView.swift */; };
+		2A2D9FC32C57E4CD004A9053 /* LoginMethodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D9FC22C57E4CD004A9053 /* LoginMethodsView.swift */; };
 		2A2D9FC52C57E4D0004A9053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A2D9FC42C57E4D0004A9053 /* Assets.xcassets */; };
 		2A2D9FC82C57E4D0004A9053 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A2D9FC72C57E4D0004A9053 /* Preview Assets.xcassets */; };
 		2A2D9FD22C57F842004A9053 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2A2D9FD12C57F842004A9053 /* FirebaseAuth */; };
@@ -16,17 +16,55 @@
 		2A2D9FD72C57FA41004A9053 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A2D9FD62C57FA41004A9053 /* GoogleSignInSwift */; };
 		2A2D9FD92C57FBE4004A9053 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A2D9FD82C57FBE4004A9053 /* GoogleService-Info.plist */; };
 		2A2D9FDC2C57FCC3004A9053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D9FDB2C57FCC3004A9053 /* AppDelegate.swift */; };
+		2A804E9F2C584D2400040DE4 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804E9E2C584D2400040DE4 /* AuthorizationViewModel.swift */; };
+		2A804EA12C584D8800040DE4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EA02C584D8800040DE4 /* SignInView.swift */; };
+		2A804EA32C584F2800040DE4 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EA22C584F2800040DE4 /* SignUpView.swift */; };
+		2A804EA52C58DA3F00040DE4 /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EA42C58DA3F00040DE4 /* EmailVerificationView.swift */; };
+		2A804EC52C5A82C500040DE4 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EC42C5A82C500040DE4 /* CanvasView.swift */; };
+		2A804EC72C5A82DE00040DE4 /* PhotoDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EC62C5A82DE00040DE4 /* PhotoDrawingView.swift */; };
+		2A804EC92C5A82EE00040DE4 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EC82C5A82EE00040DE4 /* ImagePickerView.swift */; };
+		2A804ECB2C5A831600040DE4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804ECA2C5A831600040DE4 /* MainView.swift */; };
+		2A804ECD2C5A836400040DE4 /* ImageEditingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804ECC2C5A836400040DE4 /* ImageEditingViewModel.swift */; };
+		2A804ED02C5A838200040DE4 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804ECF2C5A838200040DE4 /* TextBox.swift */; };
+		2A804ED22C5A839100040DE4 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804ED12C5A839100040DE4 /* DrawingView.swift */; };
+		2A804ED42C5A839F00040DE4 /* TextBoxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804ED32C5A839F00040DE4 /* TextBoxComponent.swift */; };
+		2A804ED62C5A83AE00040DE4 /* TextEditingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804ED52C5A83AE00040DE4 /* TextEditingFooter.swift */; };
+		2A804ED82C5A83BC00040DE4 /* ToolbarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804ED72C5A83BC00040DE4 /* ToolbarComponent.swift */; };
+		2A804EDA2C5A840100040DE4 /* EditingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804ED92C5A840100040DE4 /* EditingMenuView.swift */; };
+		2A804EDC2C5A841000040DE4 /* TextEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EDB2C5A841000040DE4 /* TextEditingView.swift */; };
+		2A804EDE2C5A841E00040DE4 /* ImageFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EDD2C5A841E00040DE4 /* ImageFilterView.swift */; };
+		2A804EE02C5A842E00040DE4 /* ImageFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EDF2C5A842E00040DE4 /* ImageFilterViewModel.swift */; };
+		2A804EE22C5B7CFF00040DE4 /* ButtonLabelModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A804EE12C5B7CFF00040DE4 /* ButtonLabelModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A2D9FBD2C57E4CD004A9053 /* AezakmiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AezakmiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2D9FC02C57E4CD004A9053 /* AezakmiTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AezakmiTestApp.swift; sourceTree = "<group>"; };
-		2A2D9FC22C57E4CD004A9053 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2A2D9FC22C57E4CD004A9053 /* LoginMethodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodsView.swift; sourceTree = "<group>"; };
 		2A2D9FC42C57E4D0004A9053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A2D9FC72C57E4D0004A9053 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A2D9FD82C57FBE4004A9053 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2A2D9FDA2C57FC5A004A9053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2A2D9FDB2C57FCC3004A9053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2A804E9E2C584D2400040DE4 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
+		2A804EA02C584D8800040DE4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		2A804EA22C584F2800040DE4 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		2A804EA42C58DA3F00040DE4 /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
+		2A804EC42C5A82C500040DE4 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		2A804EC62C5A82DE00040DE4 /* PhotoDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDrawingView.swift; sourceTree = "<group>"; };
+		2A804EC82C5A82EE00040DE4 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		2A804ECA2C5A831600040DE4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2A804ECC2C5A836400040DE4 /* ImageEditingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditingViewModel.swift; sourceTree = "<group>"; };
+		2A804ECF2C5A838200040DE4 /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
+		2A804ED12C5A839100040DE4 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		2A804ED32C5A839F00040DE4 /* TextBoxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBoxComponent.swift; sourceTree = "<group>"; };
+		2A804ED52C5A83AE00040DE4 /* TextEditingFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditingFooter.swift; sourceTree = "<group>"; };
+		2A804ED72C5A83BC00040DE4 /* ToolbarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarComponent.swift; sourceTree = "<group>"; };
+		2A804ED92C5A840100040DE4 /* EditingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingMenuView.swift; sourceTree = "<group>"; };
+		2A804EDB2C5A841000040DE4 /* TextEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditingView.swift; sourceTree = "<group>"; };
+		2A804EDD2C5A841E00040DE4 /* ImageFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterView.swift; sourceTree = "<group>"; };
+		2A804EDF2C5A842E00040DE4 /* ImageFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterViewModel.swift; sourceTree = "<group>"; };
+		2A804EE12C5B7CFF00040DE4 /* ButtonLabelModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabelModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +100,13 @@
 		2A2D9FBF2C57E4CD004A9053 /* AezakmiTest */ = {
 			isa = PBXGroup;
 			children = (
+				2A804ECA2C5A831600040DE4 /* MainView.swift */,
+				2A804EE42C5B89BB00040DE4 /* ViewModifiers */,
+				2A804EE32C5B881800040DE4 /* Components */,
+				2A804EA82C5903B000040DE4 /* Modules */,
 				2A2D9FDA2C57FC5A004A9053 /* Info.plist */,
 				2A2D9FD82C57FBE4004A9053 /* GoogleService-Info.plist */,
 				2A2D9FC02C57E4CD004A9053 /* AezakmiTestApp.swift */,
-				2A2D9FC22C57E4CD004A9053 /* ContentView.swift */,
 				2A2D9FC42C57E4D0004A9053 /* Assets.xcassets */,
 				2A2D9FC62C57E4D0004A9053 /* Preview Content */,
 				2A2D9FDB2C57FCC3004A9053 /* AppDelegate.swift */,
@@ -79,6 +120,102 @@
 				2A2D9FC72C57E4D0004A9053 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2A804EA82C5903B000040DE4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2A804EC02C5A821E00040DE4 /* ImageEditing */,
+				2A804EA92C5903BE00040DE4 /* Authorization */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2A804EA92C5903BE00040DE4 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				2A804EAB2C5903FF00040DE4 /* ViewModels */,
+				2A804EAA2C5903F900040DE4 /* Views */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		2A804EAA2C5903F900040DE4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A804EA22C584F2800040DE4 /* SignUpView.swift */,
+				2A804EA02C584D8800040DE4 /* SignInView.swift */,
+				2A2D9FC22C57E4CD004A9053 /* LoginMethodsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A804EAB2C5903FF00040DE4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A804E9E2C584D2400040DE4 /* AuthorizationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2A804EC02C5A821E00040DE4 /* ImageEditing */ = {
+			isa = PBXGroup;
+			children = (
+				2A804ECE2C5A837500040DE4 /* Models */,
+				2A804EC32C5A829600040DE4 /* Views */,
+				2A804EC22C5A828F00040DE4 /* ViewModels */,
+			);
+			path = ImageEditing;
+			sourceTree = "<group>";
+		};
+		2A804EC22C5A828F00040DE4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A804EDF2C5A842E00040DE4 /* ImageFilterViewModel.swift */,
+				2A804ECC2C5A836400040DE4 /* ImageEditingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2A804EC32C5A829600040DE4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A804EA42C58DA3F00040DE4 /* EmailVerificationView.swift */,
+				2A804EC62C5A82DE00040DE4 /* PhotoDrawingView.swift */,
+				2A804ED12C5A839100040DE4 /* DrawingView.swift */,
+				2A804ED92C5A840100040DE4 /* EditingMenuView.swift */,
+				2A804EDB2C5A841000040DE4 /* TextEditingView.swift */,
+				2A804EDD2C5A841E00040DE4 /* ImageFilterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A804ECE2C5A837500040DE4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A804ECF2C5A838200040DE4 /* TextBox.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A804EE32C5B881800040DE4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2A804ED72C5A83BC00040DE4 /* ToolbarComponent.swift */,
+				2A804ED52C5A83AE00040DE4 /* TextEditingFooter.swift */,
+				2A804ED32C5A839F00040DE4 /* TextBoxComponent.swift */,
+				2A804EC82C5A82EE00040DE4 /* ImagePickerView.swift */,
+				2A804EC42C5A82C500040DE4 /* CanvasView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2A804EE42C5B89BB00040DE4 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				2A804EE12C5B7CFF00040DE4 /* ButtonLabelModifier.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,8 +299,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A2D9FDC2C57FCC3004A9053 /* AppDelegate.swift in Sources */,
-				2A2D9FC32C57E4CD004A9053 /* ContentView.swift in Sources */,
+				2A804ECB2C5A831600040DE4 /* MainView.swift in Sources */,
+				2A804EDE2C5A841E00040DE4 /* ImageFilterView.swift in Sources */,
+				2A804EE22C5B7CFF00040DE4 /* ButtonLabelModifier.swift in Sources */,
+				2A804EDA2C5A840100040DE4 /* EditingMenuView.swift in Sources */,
+				2A804ED22C5A839100040DE4 /* DrawingView.swift in Sources */,
+				2A804EDC2C5A841000040DE4 /* TextEditingView.swift in Sources */,
+				2A2D9FC32C57E4CD004A9053 /* LoginMethodsView.swift in Sources */,
+				2A804EC72C5A82DE00040DE4 /* PhotoDrawingView.swift in Sources */,
+				2A804ED42C5A839F00040DE4 /* TextBoxComponent.swift in Sources */,
+				2A804ECD2C5A836400040DE4 /* ImageEditingViewModel.swift in Sources */,
+				2A804ED62C5A83AE00040DE4 /* TextEditingFooter.swift in Sources */,
+				2A804EC92C5A82EE00040DE4 /* ImagePickerView.swift in Sources */,
+				2A804E9F2C584D2400040DE4 /* AuthorizationViewModel.swift in Sources */,
 				2A2D9FC12C57E4CD004A9053 /* AezakmiTestApp.swift in Sources */,
+				2A804EE02C5A842E00040DE4 /* ImageFilterViewModel.swift in Sources */,
+				2A804EA32C584F2800040DE4 /* SignUpView.swift in Sources */,
+				2A804ED82C5A83BC00040DE4 /* ToolbarComponent.swift in Sources */,
+				2A804EA52C58DA3F00040DE4 /* EmailVerificationView.swift in Sources */,
+				2A804EA12C584D8800040DE4 /* SignInView.swift in Sources */,
+				2A804ED02C5A838200040DE4 /* TextBox.swift in Sources */,
+				2A804EC52C5A82C500040DE4 /* CanvasView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -279,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -301,12 +457,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AezakmiTest/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,12 +490,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AezakmiTest/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
