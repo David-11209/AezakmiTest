@@ -16,7 +16,7 @@ struct SignInView: View {
     @State private var isUserLogin: Bool = false
     @State private var isAlertPresented: Bool = false
     @State private var isLoading: Bool = false
-    @EnvironmentObject var viewModel: ViewModel
+    @EnvironmentObject var viewModel: AuthorizationViewModel
     
     var body: some View {
         VStack {
@@ -25,7 +25,7 @@ struct SignInView: View {
                 .padding()
                 .multilineTextAlignment(.center)
             
-            RoundedRectangle(cornerRadius: 8)
+            RoundedRectangle(cornerRadius: 16)
                 .stroke(lineWidth: 1)
                 .overlay {
                     TextField("Email", text: $loginText)
@@ -45,7 +45,7 @@ struct SignInView: View {
                     .padding(.bottom, 5)
             }
             
-            RoundedRectangle(cornerRadius: 8)
+            RoundedRectangle(cornerRadius: 16)
                 .stroke(lineWidth: 1)
                 .overlay {
                     SecureField("Password", text: $passwordText)
@@ -76,14 +76,8 @@ struct SignInView: View {
                     }
                 }
             }, label: {
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.black)
-                    .overlay {
-                        Text("Войти")
-                            .foregroundStyle(Color.white)
-                            .padding()
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: 60)
+                Text("Войти")
+                    .buttonLabelModifier()
             })
             
             
@@ -146,23 +140,20 @@ struct SignInView: View {
         })
         .padding()
         
-        NavigationLink(destination: TestView(), isActive: $isUserLogin) {
+        NavigationLink(destination: MainView().environmentObject(viewModel), isActive: $isUserLogin) {
             EmptyView()
         }
     }
     
     private func validateInputs() -> Bool {
-        // Reset errors
         loginError = nil
         passwordError = nil
-        
-        // Validate email
+
         if !isValidEmail(loginText) {
             loginError = "Введите корректный адрес электронной почты."
             return false
         }
-        
-        // Validate password length
+
         if passwordText.count < 8 {
             passwordError = "Пароль должен содержать не менее 8 символов."
             return false
@@ -172,7 +163,6 @@ struct SignInView: View {
     }
     
     private func isValidEmail(_ email: String) -> Bool {
-        // Simple regex for email validation
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: email)
@@ -181,5 +171,5 @@ struct SignInView: View {
 
 #Preview {
     SignInView()
-        .environmentObject(ViewModel())
+        .environmentObject(AuthorizationViewModel())
 }

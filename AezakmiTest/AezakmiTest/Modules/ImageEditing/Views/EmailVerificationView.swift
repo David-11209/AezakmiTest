@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
-
+// TODO: чекнуть
 struct EmailVerificationView: View {
 
-    @EnvironmentObject var viewModel: ViewModel
+    @EnvironmentObject var viewModel: AuthorizationViewModel
     @State var isEmailVerified: Bool = false
-    @State var isAlertPresented: Bool = false
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack {
             Text("Письмо с подтверждением email было выслано вам на почту")
@@ -20,13 +20,10 @@ struct EmailVerificationView: View {
                 .multilineTextAlignment(.center)
 
             Button(action: {
-                viewModel.checkEmailVerification { _isEmailVerified in
-                    if _isEmailVerified {
-                        isEmailVerified = _isEmailVerified
-                    } else  {
-                        isAlertPresented = true
-                    }
+                viewModel.sendEmailVerification { res, err in
+                    print("отправка письма с верификацией, результат: \(res)")
                 }
+                dismiss()
             }, label: {
                 RoundedRectangle(cornerRadius: 16)
                     .fill(Color.black)
@@ -38,13 +35,7 @@ struct EmailVerificationView: View {
                     .frame(maxWidth: .infinity, maxHeight: 60)
             })
         }
-        .alert(isPresented: $isAlertPresented) {
-            Alert(title: Text("Ваш email не подтвержден"), message: Text(""), dismissButton: .default(Text("ОК")))
-        }
-        
-        NavigationLink(destination: TestView(), isActive: $isEmailVerified) {
-            EmptyView()
-        }
+        .padding()
     }
 }
 

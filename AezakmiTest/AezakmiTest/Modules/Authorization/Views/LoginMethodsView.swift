@@ -6,84 +6,60 @@
 //
 
 import SwiftUI
-import Firebase
-import FirebaseCore
-import FirebaseAuth
-import GoogleSignIn
 
 struct LoginMethodsView: View {
     @State var isSignInPresented: Bool = false
     @State var isSignUpPresented: Bool = false
     @State var isContentPresented: Bool = false
-    @StateObject var viewModel: ViewModel = ViewModel()
+    @StateObject var viewModel: AuthorizationViewModel = AuthorizationViewModel()
     var body: some View {
-        NavigationView {
-            VStack {
+        VStack {
 
-                Button(action: {
-                    isSignInPresented = true
-                }, label: {
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Color.black)
-                        .overlay {
-                            Text("Авторизация")
-                                .foregroundStyle(Color.white)
-                                .padding()
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: 60)
-                })
+            Button(action: {
+                isSignInPresented = true
+            }, label: {
+                Text("Авторизация")
+                    .buttonLabelModifier()
+            })
 
-                Button(action: {
-                    isSignUpPresented = true
-                }, label: {
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Color.black)
-                        .overlay {
-                            Text("Регистрация")
-                                .foregroundStyle(Color.white)
-                                .padding()
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: 60)
-                })
+            Button(action: {
+                isSignUpPresented = true
+            }, label: {
+                Text("Регистрация")
+                    .buttonLabelModifier()
+            })
 
-                Button(action: {
-                    Task {
-                        let result = await viewModel.signInWithGoogle()
-                        if result {
-                            isContentPresented = true
-                        }
+            Button(action: {
+                Task {
+                    let result = await viewModel.signInWithGoogle()
+                    if result {
+                        isContentPresented = true
                     }
-                }, label: {
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Color.black)
-                        .overlay {
-                            Text("Войти через Google")
-                                .foregroundStyle(Color.white)
-                                .padding()
-                        }
-                        .overlay(alignment: .leading) {
-                            Image(.googleIcon)
-                                .resizable()
-                                .frame(maxWidth: 40, maxHeight: 40)
-                                .padding(.horizontal)
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: 60)
-                })
-
-                NavigationLink(destination: SignInView().environmentObject(viewModel), isActive: $isSignInPresented) {
-                    EmptyView()
                 }
+            }, label: {
+                Text("Войти через Google")
+                    .buttonLabelModifier()
+                    .overlay(alignment: .leading) {
+                        Image(.googleIcon)
+                            .resizable()
+                            .frame(maxWidth: 40, maxHeight: 40)
+                            .padding(.horizontal)
+                    }
+            })
 
-                NavigationLink(destination: SignUpView().environmentObject(viewModel), isActive: $isSignUpPresented) {
-                    EmptyView()
-                }
-
-                NavigationLink(destination: TestView(), isActive: $isContentPresented) {
-                    EmptyView()
-                }
+            NavigationLink(destination: SignInView().environmentObject(viewModel), isActive: $isSignInPresented) {
+                EmptyView()
             }
-            .padding(.horizontal)
+
+            NavigationLink(destination: SignUpView().environmentObject(viewModel), isActive: $isSignUpPresented) {
+                EmptyView()
+            }
+
+            NavigationLink(destination: MainView().environmentObject(viewModel), isActive: $isContentPresented) {
+                EmptyView()
+            }
         }
+        .padding(.horizontal)
     }
 
     //    @State private var loginText: String = ""
@@ -172,22 +148,22 @@ struct LoginMethodsView: View {
     //                })
     //
     //
-//                    Button(action: {
-//                        validateInputs()
-//                        Task {
-//                            let result = await viewModel.signInWithGoogle()
-//                        }
-//                    }, label: {
-//                        RoundedRectangle(cornerRadius: 16)
-//                            .fill(Color.blue.opacity(0.6))
-//                            .overlay {
-//                                Text("Войти через Google")
-//                                    .foregroundStyle(Color.white)
-//                                    .padding()
-//                            }
-//                            .frame(maxWidth: .infinity, maxHeight: 60)
-//                    })
-//    
+    //                    Button(action: {
+    //                        validateInputs()
+    //                        Task {
+    //                            let result = await viewModel.signInWithGoogle()
+    //                        }
+    //                    }, label: {
+    //                        RoundedRectangle(cornerRadius: 16)
+    //                            .fill(Color.blue.opacity(0.6))
+    //                            .overlay {
+    //                                Text("Войти через Google")
+    //                                    .foregroundStyle(Color.white)
+    //                                    .padding()
+    //                            }
+    //                            .frame(maxWidth: .infinity, maxHeight: 60)
+    //                    })
+    //
     //
     //                Button(action: {
     //                    isPasswordRecovery = true

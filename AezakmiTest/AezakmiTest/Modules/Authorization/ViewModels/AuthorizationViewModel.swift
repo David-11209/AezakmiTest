@@ -7,13 +7,11 @@
 
 import SwiftUI
 import Firebase
-import FirebaseCore
-import FirebaseAuth
 import GoogleSignIn
 
-class ViewModel: NSObject, ObservableObject {
+final class AuthorizationViewModel: NSObject, ObservableObject {
 
-//    private var currentUser: GIDGoogleUser? 
+//    private var currentUser: GIDGoogleUser?
     func signInWithGoogle() async -> Bool {
         guard let clientId = FirebaseApp.app()?.options.clientID else {
             return false
@@ -80,9 +78,8 @@ class ViewModel: NSObject, ObservableObject {
                 completion(false, "")
                 return
             }
-            self.sendEmailVerification { res, error in
-                completion(true, email)
-            }
+            completion(true, email)
+
             // Регистрация успешна
 
         }
@@ -103,6 +100,7 @@ class ViewModel: NSObject, ObservableObject {
         }
     }
 
+    // TODO: Это должно быть приватным. Используется только внутри. При проверке пользуйся 4 вкладкой (Поиск по проекту)
     func sendEmailVerification(completion: @escaping (Bool, String) -> Void) {
         guard let user = Auth.auth().currentUser else {
             completion(false, "Пользователь не найден.")

@@ -6,10 +6,6 @@
 //
 
 import SwiftUI
-import Firebase
-import FirebaseCore
-import FirebaseAuth
-import GoogleSignIn
 
 struct SignUpView: View {
     @State private var loginText: String = ""
@@ -19,27 +15,26 @@ struct SignUpView: View {
     @State private var isPasswordRecovery: Bool = false
     @State private var isUserSignUp: Bool = false
     @State private var isLoading: Bool = false
-    @EnvironmentObject var viewModel: ViewModel
+    @EnvironmentObject var viewModel: AuthorizationViewModel
 
     var body: some View {
-        VStack {
+        VStack(alignment: .center) {
                 Text("Регистрация")
                 .font(.system(size: 24))
-                .padding()
                 .multilineTextAlignment(.center)
 
-                RoundedRectangle(cornerRadius: 16)
-                .stroke(lineWidth: 1)
-                    .overlay {
-                        TextField("Login", text: $loginText)
-                            .padding()
-                            .keyboardType(.emailAddress)
-                            .autocapitalization(.none)
-                            .onChange(of: loginText) { newValue in
-                                loginError = nil
-                            }
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: 60)
+            TextField("Login", text: $loginText)
+                .padding()
+                .keyboardType(.emailAddress)
+                .autocapitalization(.none)
+                .onChange(of: loginText) { newValue in
+                    loginError = nil
+                }
+                .frame(maxWidth: .infinity, maxHeight: 60)
+                .background {
+                    RoundedRectangle(cornerRadius: 16)
+                    .stroke(lineWidth: 1)
+                }
 
                 if let error = loginError {
                     Text(error)
@@ -48,16 +43,16 @@ struct SignUpView: View {
                         .padding(.bottom, 5)
                 }
 
-                RoundedRectangle(cornerRadius: 16)
-                .stroke(lineWidth: 1)
-                    .overlay {
-                        SecureField("Password", text: $passwordText)
-                            .padding()
-                            .onChange(of: passwordText) { newValue in
-                                passwordError = nil
-                            }
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: 60)
+            SecureField("Password", text: $passwordText)
+                .padding()
+                .onChange(of: passwordText) { newValue in
+                    passwordError = nil
+                }
+                .frame(maxWidth: .infinity, maxHeight: 60)
+                .background {
+                    RoundedRectangle(cornerRadius: 16)
+                    .stroke(lineWidth: 1)
+                }
 
                 if let error = passwordError {
                     Text(error)
@@ -73,24 +68,18 @@ struct SignUpView: View {
                             if isUniqueEmail {
                                 viewModel.signUpWithEmail(email: loginText, password: passwordText) { res, er in
                                     isLoading = false
-                                    print(res)
-                                    print(er)
-                                    print()
                                     isUserSignUp = true
                                 }
                             }
                         }
                     }
                 }, label: {
-                    RoundedRectangle(cornerRadius: 16)
-                        .fill(Color.black)
-                        .overlay {
-                            Text("Зарегистрироваться")
-                                .foregroundStyle(Color.white)
-                                .padding()
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: 60)
+                    Text("Зарегистрироваться")
+                        .buttonLabelModifier()
                 })
+            NavigationLink(destination: MainView().environmentObject(viewModel), isActive: $isUserSignUp) {
+                EmptyView()
+            }
         }
         .overlay {
             if isLoading {
@@ -98,29 +87,18 @@ struct SignUpView: View {
             }
         }
         .padding()
-
-        NavigationLink(destination: TestView(), isActive: $isUserSignUp) {
-            EmptyView()
-        }
-
-//        NavigationLink(destination: EmailVerificationView().environmentObject(viewModel), isActive: $isEmailVerificationPresent) {
-//            EmptyView()
-//        }
     }
 
-
     private func validateInputs() -> Bool {
-        // Reset errors
+
         loginError = nil
         passwordError = nil
 
-        // Validate email
         if !isValidEmail(loginText) {
             loginError = "Введите корректный адрес электронной почты."
             return false
         }
 
-        // Validate password length
         if passwordText.count < 8 {
             passwordError = "Пароль должен содержать не менее 8 символов."
             return false
@@ -130,7 +108,6 @@ struct SignUpView: View {
     }
 
     private func isValidEmail(_ email: String) -> Bool {
-        // Simple regex for email validation
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: email)
@@ -139,5 +116,5 @@ struct SignUpView: View {
 
 #Preview {
     SignUpView()
-        .environmentObject(ViewModel())
+        .environmentObject(AuthorizationViewModel())
 }
