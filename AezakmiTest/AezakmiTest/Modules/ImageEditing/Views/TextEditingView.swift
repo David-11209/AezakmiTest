@@ -37,6 +37,9 @@ struct TextEditingView: View {
                 }
                 .frame(alignment: .bottom)
             }
+            .alert(isPresented:  $viewModel.showAlert) {
+                Alert(title: Text("Message"), message: Text(viewModel.message), dismissButton: .default(Text("OK")))
+            }
             .sheet(isPresented: $isShareTapped, content: {
                 ShareSheet(items: [viewModel.shareImage])
             })

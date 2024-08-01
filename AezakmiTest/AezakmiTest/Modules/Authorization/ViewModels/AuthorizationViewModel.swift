@@ -62,7 +62,6 @@ final class AuthorizationViewModel: NSObject, ObservableObject {
                 completion(false)
                 return
             }
-
             completion(methods?.isEmpty ?? true)
         }
     }

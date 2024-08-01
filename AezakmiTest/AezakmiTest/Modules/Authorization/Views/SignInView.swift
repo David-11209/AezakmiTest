@@ -100,12 +100,11 @@ struct SignInView: View {
         }
         .sheet(isPresented: $isPasswordRecovery, content: {
             VStack {
-                Text("Восстановление пароля")
 
                 Text("Укажите Email на который мы вышлем письмо с ссылкой для восстановления пароля")
                     .multilineTextAlignment(.center)
 
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 16)
                     .stroke(lineWidth: 1)
                     .overlay {
                         TextField("Login", text: $loginText)
@@ -118,23 +117,15 @@ struct SignInView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: 60)
 
-
                 
                 Button(action: {
                     viewModel.resetPassword(email: loginText)
                     loginText = ""
                     isPasswordRecovery = false
                 }, label: {
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Color.black)
-                        .overlay {
-                            Text("Восстановить пароль")
-                                .foregroundStyle(Color.white)
-                                .padding()
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: 60)
+                    Text("Продолжить")
+                        .buttonLabelModifier()
                 })
-                
             }
             .padding()
         })

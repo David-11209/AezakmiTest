@@ -15,6 +15,7 @@ struct SignUpView: View {
     @State private var isPasswordRecovery: Bool = false
     @State private var isUserSignUp: Bool = false
     @State private var isLoading: Bool = false
+    @State private var isAlertPresented: Bool = false
     @EnvironmentObject var viewModel: AuthorizationViewModel
 
     var body: some View {
@@ -70,6 +71,9 @@ struct SignUpView: View {
                                     isLoading = false
                                     isUserSignUp = true
                                 }
+                            } else {
+                                isAlertPresented = true
+                                isLoading = false
                             }
                         }
                     }
@@ -80,6 +84,9 @@ struct SignUpView: View {
             NavigationLink(destination: MainView().environmentObject(viewModel), isActive: $isUserSignUp) {
                 EmptyView()
             }
+        }
+        .alert(isPresented: $isAlertPresented) {
+            Alert(title: Text("Ошибка регистрации"), message: Text("Пользователь с таким email уже существует"), dismissButton: .default(Text("ОК")))
         }
         .overlay {
             if isLoading {

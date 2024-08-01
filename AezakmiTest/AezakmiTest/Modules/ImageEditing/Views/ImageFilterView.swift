@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ImageFilterView: View {
     @StateObject private var viewModel = ImageFilterViewModel()
+    @State private var isAlertPresented = false
     var image: UIImage
 
     var body: some View {
@@ -41,6 +42,7 @@ struct ImageFilterView: View {
 
             Button(action: {
                 viewModel.saveImageToGallery()
+                isAlertPresented = true
             }, label: {
                 Text("Сохранить")
                     .foregroundStyle(Color.white)
@@ -50,6 +52,9 @@ struct ImageFilterView: View {
                             .fill(Color.black)
                     }
             })
+        }
+        .alert(isPresented:  $isAlertPresented) {
+            Alert(title: Text("Успешно"), message: Text("Изображение сохранено"), dismissButton: .default(Text("OK")))
         }
         .padding()
         .onAppear {

@@ -25,7 +25,6 @@ final class ImageEditingViewModel: ObservableObject {
         canvasView = PKCanvasView()
         toolPicker.setVisible(false, forFirstResponder: canvasView)
         image = nil
-        textBoxes = []
     }
 
     func cancelTextView() {
